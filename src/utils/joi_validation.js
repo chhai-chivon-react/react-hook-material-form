@@ -1,12 +1,11 @@
 import Joi from "joi-browser";
 
 const SignUpFormValidator = (obj) => {
-  const schema = {
+  const schema = Joi.object().keys({
     firstname: Joi.string().required(),
-    lastname: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string().min(6).required(),
-  };
+  }).unknown(true);
   return Joi.validate(obj, schema);
 };
 

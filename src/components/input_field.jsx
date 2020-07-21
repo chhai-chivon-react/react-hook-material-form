@@ -6,13 +6,14 @@ import { removeQoute } from "../utils/string_utils";
 
 const InputField = (props) => {
   const { error, ...rest } = props;
+  const hasError = error !== undefined;
   return (
     <TextField
       {...rest}
       variant="outlined"
       fullWidth
-      error={error !== undefined}
-      helperText={error !== undefined && `${removeQoute(error)}`}
+      error={hasError}
+      helperText={hasError && `${removeQoute(error)}`}
     />
   );
 };

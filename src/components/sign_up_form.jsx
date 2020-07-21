@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   CssBaseline,
@@ -37,13 +37,12 @@ const useStyles = makeStyles((theme) => ({
 
 const SignUpForm = () => {
   const classes = useStyles();
-  const [values, handleChange] = useForm({
+  const [values, handleChange, error, setError] = useForm({
     firstname: "chunlee",
     lastname: "thong",
     email: "michael.lawson@reqres.in",
     password: "1234567",
   });
-  const [error, setError] = useState({});
   const onFormSubmit = (e) => {
     e.preventDefault();
     const { error } = SignUpFormValidator(values);

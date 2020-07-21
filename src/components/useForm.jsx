@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export const useForm = (initialValues) => {
   const [values, setValues] = useState(initialValues);
+  const [error, setError] = useState({});
 
   return [
     values,
@@ -10,6 +11,10 @@ export const useForm = (initialValues) => {
         ...values,
         [e.target.name]: e.target.value,
       });
+    },
+    error,
+    (err) => {
+      setError(err);
     },
   ];
 };
