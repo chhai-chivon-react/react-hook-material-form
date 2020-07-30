@@ -38,10 +38,10 @@ const useStyles = makeStyles((theme) => ({
 const SignUpForm = () => {
   const classes = useStyles();
   const [values, handleChange, error, setError] = useForm({
-    firstname: "chunlee",
-    lastname: "thong",
-    email: "michael.lawson@reqres.in",
-    password: "1234567",
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
   });
   const onFormSubmit = (e) => {
     e.preventDefault();
